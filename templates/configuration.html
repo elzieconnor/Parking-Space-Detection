@@ -1,0 +1,25 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<h1>View Configuration Form</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+	    {{ form.camera_id.label }}<br>
+            {{ form.camera_id }}
+        </p>
+        <p>
+	    {{ form.lot_information.label }}<br>
+            {{ form.lot_information }}<form>
+  <input type="button" value="Create New Lot" onclick="msg()">
+</form>
+
+<script>
+function msg() {
+  window.location.href = '/admin/lot/new/?url=%2Fadmin%2Flot%2F';
+}
+</script>
+        </p>
+<p>{{ form.submit() }}</p></form>
+{% endblock body %}

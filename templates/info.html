@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Campus Parking</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	
+	<style>
+		* {
+  			font-family: Arial;
+		}
+		body {
+			margin: 0;
+		}
+			
+		.header {
+			background-color: #f1f1f1;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>	
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Real Time Parking Detection</h1>
+		<p>At Missouri State University</p> 
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Real Time Parking</a>
+			</div>
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				
+			  </ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container"></div>
+	<h2>Welcome to the info Page</h2>
+	<p>Real time parking detection is here to make your life easier. 
+		A product of John Guinn, Dustin Clifton, Deven Colbert, Connor Elzie and Savon Williams, 
+		RTPD is an educational application designed to help students at Missouri State University 
+		and has the capabilities to help universities beyond. 
+		</p>
+			<h2>Available Parking</h2>          
+			<table class="table table-hover">
+			  <thead>
+
+				<tr>
+				  <th>Parking Spot</th>
+				  <th>Availability</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				{% for item in data %}
+				<tr>
+				  <td>{{item[0]}}</td>
+				  <td>{{item[1]}}</td>
+				</tr>
+				{% endfor %}
+			  </tbody>
+			</table>
+	</div>
+	<CENTER><p>This is a web interface for the Real-Time Parking Detection system. The information was last updated at 
+{{ timestamp }}.</p></CENTER>
+</body>
+</html>
